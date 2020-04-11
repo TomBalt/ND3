@@ -47,12 +47,6 @@ namespace ConsoleGame.Gui
         public override void Render()
         {
 
-
-            
-            // padarom pause. (parodom ekrana).
-         
-       
-                // isvalom ekrana
                 Console.Clear();
 
                 base.Render();
@@ -60,23 +54,6 @@ namespace ConsoleGame.Gui
                 titleTextBlock.Render();
 
                 renderActive(possition);
-
-               
-
-
-
-                // padarom pause. (parodom ekrana).
-
-           
-
-
-            /*
-            startButton.Render();
-            creditsButton.Render();
-            quitButton.Render();
-            
-            Console.SetCursorPosition(0, 0);
-            */
         }
 
         public ConsoleKeyInfo readInput()
