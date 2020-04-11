@@ -25,13 +25,43 @@ namespace ConsoleGame.Gui
         }
         public void ShowMenu()
         {
+
             do
             {
                 gameWindow.Render();
-                ConsoleKeyInfo pressedButton = gameWindow.readInput();
+                ConsoleKeyInfo pressedButton = readInput();
                 ControlButtonPress(pressedButton);
 
             } while (continueProgram);
+        }
+
+        private ConsoleKeyInfo readInput()
+        {
+            bool invalidButtonPressed = false;
+            ConsoleKeyInfo pressedChar;
+            do
+            {
+                pressedChar = Console.ReadKey();
+                switch (pressedChar.Key)
+                {
+                    case ConsoleKey.Escape:
+                        invalidButtonPressed = false;
+                        break;
+                    case ConsoleKey.Enter:
+                        invalidButtonPressed = false;
+                        break;
+                    case ConsoleKey.RightArrow:
+                        invalidButtonPressed = false;
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        invalidButtonPressed = false;
+                        break;
+                    default:
+                        Console.WriteLine("Use left or right OR ENTER or ESC buttons.");
+                        break;
+                }
+            } while (invalidButtonPressed);
+            return pressedChar;
         }
 
         private void ControlButtonPress(ConsoleKeyInfo pressedChar)

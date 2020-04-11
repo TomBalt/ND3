@@ -56,34 +56,7 @@ namespace ConsoleGame.Gui
                 renderActive(possition);
         }
 
-        public ConsoleKeyInfo readInput()
-        {
-            bool invalidButtonPressed = false;
-            ConsoleKeyInfo pressedChar;
-            do
-            {
-                pressedChar = Console.ReadKey();
-                switch (pressedChar.Key)
-                {
-                    case ConsoleKey.Escape:
-                        invalidButtonPressed = false;
-                        break;
-                    case ConsoleKey.Enter:
-                        invalidButtonPressed = false;
-                        break;
-                    case ConsoleKey.RightArrow:
-                        invalidButtonPressed = false;
-                        break;
-                    case ConsoleKey.LeftArrow:
-                        invalidButtonPressed = false;
-                        break;
-                    default:
-                        Console.WriteLine("Use left or right OR ENTER or ESC buttons.");
-                        break;
-                }
-            } while (invalidButtonPressed);
-            return pressedChar;
-        }
+        
         public void setActiveButtonOrder(bool add = true)
         {
             if (possition >= 0 && possition < allButtons.Count)
